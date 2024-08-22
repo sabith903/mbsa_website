@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Result Details
+{% endblock %}
+
+{% block content %}
+<nav class="nav" style="justify-content: center;">
+    <a class="nav-link" href="{% url 'teams' %}">Teams</a>
+    <a class="nav-link" href="{% url 'students' %}">Students</a>
+    <a class="nav-link" href="{% url 'programs' %}">Programs</a>
+    <a class="nav-link" href="{% url 'stages' %}">Stages</a>
+    <a class="nav-link" href="{% url 'categories' %}">Categories</a>
+</nav>
+<main class="container mt-4">
+    <h2 class="text-center mt-5">List of Teams</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Team Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for team in teams %}
+                    <tr>
+                        <td>{{ team.name }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td class="text-center">No teams available.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <h2 class="text-center">List of Results</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Student Name</th>
+                    <th scope="col">Program</th>
+                    <th scope="col">Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                    <tr>
+                        <td>{{ result.student.first_name }} {{ result.student.last_name }}</td>
+                        <td>{{ result.program.name }}</td>
+                        <td>{{ result.score }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="3" class="text-center">No results available.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
+{% endblock %}

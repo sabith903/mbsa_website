@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %} Teams and Students {% endblock %}
+
+{% block content %}
+<nav class="nav" style="justify-content: center;">
+  <a class="nav-link" href="{% url 'students' %}">Students</a>
+  <a class="nav-link" href="{% url 'programs' %}">Programs</a>
+  <a class="nav-link" href="{% url 'stages' %}">Stages</a>
+  <a class="nav-link" href="{% url 'categories' %}">Categories</a>
+  <a class="nav-link" href="{% url 'results' %}">Results</a>
+</nav>
+<main class="container mt-4">
+  <h2 class="text-center mb-4">Teams</h2>
+
+  {% for team_group in split_teams %}
+    <div class="row mb-4">
+      {% for team_name, students in team_group %}
+        <div class="col-md-6 mb-4">
+          <h4 class="text-center">{{ team_name }}</h4>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Chest Number</th>
+                <th scope="col">Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% if students %}
+                {% for student in students %}
+                <tr>
+                  <td>{{ student.chest_number }}</td>
+                  <td>{{ student.first_name }} {{ student.last_name }}</td>
+                  <td>{{ student.category }}</td>
+                  <td>
+                    <a href="{% url 'student_detail' student.id %}" class="btn btn-primary btn-sm">View Details</a>
+                  </td>
+                </tr>
+                {% endfor %}
+              {% else %}
+                <tr>
+                  <td colspan="4" class="text-center">No students available.</td>
+                </tr>
+              {% endif %}
+            </tbody>
+          </table>
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</main>
+{% endblock %}

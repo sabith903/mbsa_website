@@ -1,0 +1,1 @@
+web: gunicorn mbsa_website.wsgi

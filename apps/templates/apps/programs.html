@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Program Details
+{% endblock %}
+
+{% block content %}
+<nav class="nav" style="justify-content: center;">
+    <a class="nav-link" href="{% url 'teams' %}">Team</a>
+    <a class="nav-link" href="{% url 'students' %}">Students</a>
+    <a class="nav-link" href="{% url 'stages' %}">Stage</a>
+    <a class="nav-link" href="{% url 'categories' %}">Category</a>
+    <a class="nav-link" href="{% url 'results' %}">Result</a>
+</nav>
+<main class="container mt-4">
+    <h2>List of Programs</h2>
+    <ul class="list-group">
+        {% for program in programs %}
+            <li class="list-group-item">{{ program.name }} - {{ program.category.name }} - {{ program.stage.name }}</li>
+        {% empty %}
+            <li class="list-group-item">No programs available.</li>
+        {% endfor %}
+    </ul>
+</main>
+{% endblock %}

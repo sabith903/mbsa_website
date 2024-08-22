@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Contact Us
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Contact MBSA</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <form method="post" action="{% url 'submit_contact' %}">
+                {% csrf_token %}
+                <div class="mb-4">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control shadow-sm" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control shadow-sm" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control shadow-sm" id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg shadow">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

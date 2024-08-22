@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+    Destino Details
+{% endblock %}
+
+{% block content %}
+<nav class="nav" style="justify-content: center;">
+        <a class="nav-link" href="{% url 'teams' %}">Teams</a>
+        <a class="nav-link" href="{% url 'students' %}">Students</a>
+        <a class="nav-link" href="{% url 'programs' %}">Programs</a>
+        <a class="nav-link" href="{% url 'stages' %}">Stages</a>
+        <a class="nav-link" href="{% url 'categories' %}">Categories</a>
+        <a class="nav-link" href="{% url 'results' %}">Results</a>
+</nav>
+<main class="container">
+        <h2 style="text-align:center">Destino</h2>
+        <img src="/media/images/banner.jpeg" alt="Destino Banner" class="img-fluid">
+</main>
+{% endblock %}

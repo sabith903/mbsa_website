@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %} Student Details {% endblock %}
+
+{% block content %}
+<nav class="nav" style="justify-content: center;">
+  <a class="nav-link" href="{% url 'teams' %}">Teams</a>
+  <a class="nav-link" href="{% url 'programs' %}">Programs</a>
+  <a class="nav-link" href="{% url 'stages' %}">Stages</a>
+  <a class="nav-link" href="{% url 'categories' %}">Categories</a>
+  <a class="nav-link" href="{% url 'results' %}">Results</a>
+</nav>
+<main class="container mt-4">
+  <h2 class="text-center mb-4">List of Students</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Chest Number</th>
+          <th scope="col">Name</th>
+          <th scope="col">Category</th>
+          <th scope="col">Team</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for student in students %}
+        <tr>
+          <td ><a href="{% url 'student_detail' student.id %}" class="text-decoration-none text-dark">{{ student.chest_number }}</a></td>
+          <td><a href="{% url 'student_detail' student.id %}" class="text-decoration-none text-dark">{{ student.first_name }} {{ student.last_name }}</a></td>
+          <td><a href="{% url 'student_detail' student.id %}" class="text-decoration-none text-dark">{{ student.category }}</a></td>
+          <td><a href="{% url 'student_detail' student.id %}" class="text-decoration-none text-dark">{{ student.team }}</a></td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="4" class="text-center">No students available.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</main>
+{% endblock %}
