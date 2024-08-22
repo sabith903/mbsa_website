@@ -83,6 +83,16 @@ DATABASES = {
         ssl_require=True,
     )
 }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mbsa_website_i2w2',
+        'USER': 'mbsa_website_i2w2_user', 
+        'PASSWORD': 'TWwfKUJBp9Ml2F4iOh0XbpR606sGh4cA',
+        'HOST': 'dpg-cr3l0q56l47c73a74ntg-a', 
+        'PORT': '5432',
+    }
+}
 
 
 
