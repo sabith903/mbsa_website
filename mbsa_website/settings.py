@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-p3akbq^)@0z0(4ynsvz$fo$f99^=1m2fk0=#s3db28b%_-kc*i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://mbsa-website.onrender.com']
 
 
 # Application definition
@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'mbsa_website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mbsa',
-        'USER': 'sabith903',
-        'PASSWORD': '49984998',
-        'HOST': 'localhost',
+        'NAME': 'mbsa_website_i2w2',
+        'USER': 'mbsa_website_i2w2_user',
+        'PASSWORD': 'bTW6skYzwhUkzJvcat6LObTXpSxhoPsE',
+        'HOST': 'dpg-cr3l0q56l47c73a74ntg-a',
         'PORT': '5432',
     }
 }
