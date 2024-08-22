@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-p3akbq^)@0z0(4ynsvz$fo$f99^=1m2fk0=#s3db28b%_-kc*i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://mbsa-website.onrender.com']
+ALLOWED_HOSTS = ['mbsa-website.onrender.com', 'your-other-domain.com']
 
 
 # Application definition
