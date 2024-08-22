@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'mbsa_website.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://mbsa_website_user:TWwfKUJBp9Ml2F4iOh0XbpR606sGh4cA@dpg-cr3kbraj1k6c73dp0ueg-a/mbsa_website',
+        default='postgresql://mbsa_website_user:bTW6skYzwhUkzJvcat6LObTXpSxhoPsE@dpg-cr3kbraj1k6c73dp0ueg-a/mbsa_website',
         conn_max_age=600,
         ssl_require=True,
     )
@@ -88,7 +88,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'mbsa_website_i2w2',
         'USER': 'mbsa_website_i2w2_user', 
-        'PASSWORD': 'TWwfKUJBp9Ml2F4iOh0XbpR606sGh4cA',
+        'PASSWORD': 'bTW6skYzwhUkzJvcat6LObTXpSxhoPsE',
         'HOST': 'dpg-cr3l0q56l47c73a74ntg-a', 
         'PORT': '5432',
     }
